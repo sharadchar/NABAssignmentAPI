@@ -9,7 +9,6 @@ namespace NABAssignmentModels
     /// <summary>
     /// This represents the model entity for person.
     /// </summary>
-    [JsonArrayAttribute]
     public class Person
     {
         /// <summary>
@@ -17,32 +16,28 @@ namespace NABAssignmentModels
         /// </summary>
         public Person()
         {
-            this.Pets = new List<Pet>();
+            this.pets = new List<Pet>();
         }
 
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        public string name { get; set; }
 
         /// <summary>
         /// Gets or sets the <see cref="Models.GenderType"/> value.
         /// </summary>
-        [JsonProperty("gender")]
         [EnumDataType(typeof(GenderType))]
-        public GenderType GenderType { get; set; }
+        public GenderType gender { get; set; }
 
         /// <summary>
         /// Gets or sets the age.
         /// </summary>
-        [JsonProperty("age")]
-        public int Age { get; set; }
+        public int age { get; set; }
 
-        /// <summary>
-        /// Gets or sets the list of <see cref="Pet"/> objects.
-        /// </summary>
-        [JsonProperty("pets")]
-        public List<Pet> Pets { get; set; }
+        ///// <summary>
+        ///// Gets or sets the list of <see cref="Pet"/> objects.
+        ///// </summary>        
+        public List<Pet> pets { get; set; }
     }
 }

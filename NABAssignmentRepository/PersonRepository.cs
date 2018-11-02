@@ -21,7 +21,7 @@ namespace NABAssignmentRepository
 
                 var res = JsonConvert.DeserializeObject<List<Person>>(File.ReadAllText(filepath));
 
-                return new List<Person>();
+                return res;
             }
             catch(Exception ex)
             {
