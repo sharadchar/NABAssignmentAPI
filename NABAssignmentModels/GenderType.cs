@@ -17,6 +17,7 @@ namespace NABAssignmentModels
         /// <summary>
         /// Identifies male.
         /// </summary>
+        
         Male = 1,
 
         /// <summary>

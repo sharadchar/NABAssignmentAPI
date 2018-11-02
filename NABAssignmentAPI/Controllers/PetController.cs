@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using NABAssignmentBL;
 using NABAssignmentModels;
 using NABAssignmentRepository;
 using NABAssignmentServices;
+using System.Collections.Generic;
 
 namespace NABAssignmentAPI.Controllers
 {
@@ -22,9 +19,8 @@ namespace NABAssignmentAPI.Controllers
             _configuration = Configuration;
         }
 
-        // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<Person>> Get()
+        public ActionResult<PetsClassified> Get()
         {
             string filepath = _configuration["PetsFilePath"].ToString();
 
@@ -32,16 +28,25 @@ namespace NABAssignmentAPI.Controllers
             IDataReader dataReader = new JsonFileReader(repository);
             PersonBL personBL = new PersonBL(dataReader);
 
-            List<Person> personWithPets  =  personBL.GetPerson(filepath);
+            PetsClassified petsClassified = personBL.GetPetsClassified(filepath);
 
-            return personWithPets;            
+            return petsClassified;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpGet("{gender}")]
+        public ActionResult<IEnumerable<string>> Get(string gender)
         {
-            return "value";
-        }        
+            string filepath = _configuration["PetsFilePath"].ToString();
+
+            IRepository repository = new PersonRepository();
+            IDataReader dataReader = new JsonFileReader(repository);
+            PersonBL personBL = new PersonBL(dataReader);
+
+            var petsClassified = personBL.GetPetsByGender(filepath,gender);
+
+            return petsClassified;
+        }
+
+
     }
 }
