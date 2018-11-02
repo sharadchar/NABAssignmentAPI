@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NABAssignmentModels
+﻿namespace NABAssignmentModels
 {
     /// <summary>
     /// This specifies the gender type.
