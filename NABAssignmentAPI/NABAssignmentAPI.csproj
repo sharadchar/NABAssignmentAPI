@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Files\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NABAssignmentBL\NABAssignmentBL.csproj" />
+    <ProjectReference Include="..\NABAssignmentModels\NABAssignmentModels.csproj" />
+    <ProjectReference Include="..\NABAssignmentRepository\NABAssignmentRepository.csproj" />
+    <ProjectReference Include="..\NABAssignmentServices\NABAssignmentServices.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+NABAssignmentAPI/bin/
+NABAssignmentAPI/obj/
+NABAssignmentBL/obj/
+NABAssignmentModels/bin/
+NABAssignmentModels/obj/
+NABAssignmentBL/bin/
+NABAssignmentRepository/bin/
+NABAssignmentRepository/obj/
+NABAssignmentServices/obj/
+NABAssignmentServices/bin/

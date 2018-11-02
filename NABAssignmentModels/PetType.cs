@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace NABAssignmentModels
+{
+    /// <summary>
+    /// This specifies the pet type.
+    /// </summary>
+    public enum PetType
+    {
+        /// <summary>
+        /// Identifies unknown.
+        /// </summary>
+        Unknown = 0,
+
+        /// <summary>
+        /// Identifies cat.
+        /// </summary>
+        Cat = 1,
+
+        /// <summary>
+        /// Identifies dog.
+        /// </summary>
+        Dog = 2,
+
+        /// <summary>
+        /// Identifies fish.
+        /// </summary>
+        Fish = 3
+    }
+}
