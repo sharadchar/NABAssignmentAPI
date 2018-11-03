@@ -9,8 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OwnerPets.Data;
 
-namespace NABAssignmentAPI
+namespace OwnerPets.Api
 {
     public class Startup
     {
@@ -25,7 +26,9 @@ namespace NABAssignmentAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<IConfiguration>(Configuration);
+            services.Configure<FileSettings>(options => Configuration.GetSection("FileSettings").Bind(options));
+            //ervices.Configure<MySettings>(options => Configuration.GetSection("MySettings"));
+            //services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

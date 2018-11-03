@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using OwnerPets.Data;
 using OwnerPets.Repository;
 using OwnerPets.Services;
@@ -13,22 +14,20 @@ namespace OwnerPets.Api.Controllers
     public class PetController : ControllerBase
     {
         private IConfiguration _configuration;
+        private IOptions<FileSettings> _options;
 
-        public PetController(IConfiguration Configuration)
+        public PetController(IConfiguration Configuration, IOptions<FileSettings> options)
         {
             _configuration = Configuration;
+            _options = options;
         }
 
         [HttpGet]
         public ActionResult<PetsClassified> Get()
         {
-            string filepath = _configuration["PetsFilePath"].ToString();
+            PetsService personBL = new PetsService(_options);
 
-            IRepository repository = new PetsRepository();
-            IPetsDataReader dataReader = new JsonFileReader(repository);
-            PetsService personBL = new PetsService(dataReader);
-
-            PetsClassified petsClassified = personBL.GetPetsClassified(filepath);
+            PetsClassified petsClassified = personBL.GetPetsClassified();
 
             return petsClassified;
         }
@@ -36,13 +35,9 @@ namespace OwnerPets.Api.Controllers
         [HttpGet("{gender}")]
         public ActionResult<IEnumerable<string>> Get(string gender)
         {
-            string filepath = _configuration["PetsFilePath"].ToString();
+            PetsService personBL = new PetsService(_options);
 
-            IRepository repository = new PetsRepository();
-            IPetsDataReader dataReader = new JsonFileReader(repository);
-            PetsService personBL = new PetsService(dataReader);
-
-            var petsClassified = personBL.GetPetsByGender(filepath,gender);
+            var petsClassified = personBL.GetPetsByGender(gender);
 
             return petsClassified;
         }
