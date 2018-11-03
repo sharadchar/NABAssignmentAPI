@@ -15,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NABAssignmentBL\NABAssignmentBL.csproj" />
-    <ProjectReference Include="..\NABAssignmentModels\NABAssignmentModels.csproj" />
-    <ProjectReference Include="..\NABAssignmentRepository\NABAssignmentRepository.csproj" />
-    <ProjectReference Include="..\NABAssignmentServices\NABAssignmentServices.csproj" />
+    <ProjectReference Include="..\OwnerPets.Data\OwnerPets.Data.csproj" />
+    <ProjectReference Include="..\OwnerPets.Repository\OwnerPets.Repository.csproj" />
+    <ProjectReference Include="..\OwnerPets.ServicesHelper\OwnerPets.ServicesHelper.csproj" />
+    <ProjectReference Include="..\OwnerPets.Services\OwnerPets.Services.csproj" />
   </ItemGroup>
 
 </Project>

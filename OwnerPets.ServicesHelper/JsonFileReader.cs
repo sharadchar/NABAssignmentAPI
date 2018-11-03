@@ -1,12 +1,10 @@
-﻿using System;
+﻿using OwnerPets.Data;
+using OwnerPets.Repository;
 using System.Collections.Generic;
-using System.Text;
-using NABAssignmentModels;
-using NABAssignmentRepository;
 
-namespace NABAssignmentServices
+namespace OwnerPets.ServicesHelper
 {
-    public class JsonFileReader : IDataReader
+    public class JsonFileReader : IPetsDataReader
     {
         IRepository _repository;
 
@@ -24,7 +22,7 @@ namespace NABAssignmentServices
         {
             if (string.IsNullOrWhiteSpace(filepath)) return new List<Person>();
 
-            return (_repository as PersonRepository).GetPersonFromJsonFile(filepath);
+            return (_repository as PetsRepository).GetPersonFromJsonFile(filepath);
         }
     }
 }

@@ -1,21 +1,22 @@
-﻿using NABAssignmentModels;
-using NABAssignmentServices;
+﻿using OwnerPets.Data;
+using OwnerPets.ServicesHelper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 
-namespace NABAssignmentBL
+namespace OwnerPets.Services
 {
-    public class PersonBL
+    public class PetsService
     {
-        private IDataReader _dataReader;
+        private IPetsDataReader _dataReader;
 
-        public PersonBL(IDataReader dataReader)
+        public PetsService(IPetsDataReader dataReader)
         {
             _dataReader = dataReader;
         }
 
-        public List<Person> GetPerson(string filepath)
+        public List<Person> GetPetsData(string filepath)
         {
             return _dataReader.GetData(filepath);
         }
@@ -25,6 +26,7 @@ namespace NABAssignmentBL
             var result = new PetsClassified();
 
             var data =  _dataReader.GetData(filepath);
+
 
             result.MalePets = data.Where(x => x.gender == GenderType.Male && x.pets != null).SelectMany(x => x.pets).Where(y => y.type == PetType.Cat).Select(y => y.name).ToList();
 

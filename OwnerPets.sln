@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NABAssignmentAPI", "NABAssignmentAPI\NABAssignmentAPI.csproj", "{E67E8D27-CEE1-4168-8D16-D3E2B5C59445}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Api", "OwnerPets.Api\OwnerPets.Api.csproj", "{E67E8D27-CEE1-4168-8D16-D3E2B5C59445}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NABAssignmentModels", "NABAssignmentModels\NABAssignmentModels.csproj", "{D3532E7C-5BD2-44A7-8A19-6DA3C563C53C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Data", "OwnerPets.Data\OwnerPets.Data.csproj", "{D3532E7C-5BD2-44A7-8A19-6DA3C563C53C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NABAssignmentServices", "NABAssignmentServices\NABAssignmentServices.csproj", "{18A94849-892F-4C5E-9CEB-49892B30A27E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.ServicesHelper", "OwnerPets.ServicesHelper\OwnerPets.ServicesHelper.csproj", "{18A94849-892F-4C5E-9CEB-49892B30A27E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NABAssignmentBL", "NABAssignmentBL\NABAssignmentBL.csproj", "{ABE129BF-6C5C-4039-939D-C1AEC968ABE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Services", "OwnerPets.Services\OwnerPets.Services.csproj", "{ABE129BF-6C5C-4039-939D-C1AEC968ABE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NABAssignmentRepository", "NABAssignmentRepository\NABAssignmentRepository.csproj", "{A269C58E-6692-48FA-817B-3ED8CAF7414A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Repository", "OwnerPets.Repository\OwnerPets.Repository.csproj", "{A269C58E-6692-48FA-817B-3ED8CAF7414A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

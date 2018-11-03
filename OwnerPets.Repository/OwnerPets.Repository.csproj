@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NABAssignmentModels\NABAssignmentModels.csproj" />
+    <ProjectReference Include="..\OwnerPets.Data\OwnerPets.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

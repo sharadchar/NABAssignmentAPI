@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NABAssignmentModels
+namespace OwnerPets.Data
 {
     public class PetsClassified
     {

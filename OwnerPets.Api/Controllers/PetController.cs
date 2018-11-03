@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using NABAssignmentBL;
-using NABAssignmentModels;
-using NABAssignmentRepository;
-using NABAssignmentServices;
+using OwnerPets.Data;
+using OwnerPets.Repository;
+using OwnerPets.Services;
+using OwnerPets.ServicesHelper;
 using System.Collections.Generic;
 
-namespace NABAssignmentAPI.Controllers
+namespace OwnerPets.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -24,9 +24,9 @@ namespace NABAssignmentAPI.Controllers
         {
             string filepath = _configuration["PetsFilePath"].ToString();
 
-            IRepository repository = new PersonRepository();
-            IDataReader dataReader = new JsonFileReader(repository);
-            PersonBL personBL = new PersonBL(dataReader);
+            IRepository repository = new PetsRepository();
+            IPetsDataReader dataReader = new JsonFileReader(repository);
+            PetsService personBL = new PetsService(dataReader);
 
             PetsClassified petsClassified = personBL.GetPetsClassified(filepath);
 
@@ -38,9 +38,9 @@ namespace NABAssignmentAPI.Controllers
         {
             string filepath = _configuration["PetsFilePath"].ToString();
 
-            IRepository repository = new PersonRepository();
-            IDataReader dataReader = new JsonFileReader(repository);
-            PersonBL personBL = new PersonBL(dataReader);
+            IRepository repository = new PetsRepository();
+            IPetsDataReader dataReader = new JsonFileReader(repository);
+            PetsService personBL = new PetsService(dataReader);
 
             var petsClassified = personBL.GetPetsByGender(filepath,gender);
 

@@ -8,3 +8,14 @@ NABAssignmentRepository/bin/
 NABAssignmentRepository/obj/
 NABAssignmentServices/obj/
 NABAssignmentServices/bin/
+OwnerPets.Api/bin/
+OwnerPets.Api/obj/
+OwnerPets.Data/bin/
+OwnerPets.Data/obj/
+OwnerPets.Repository/bin/
+OwnerPets.Repository/obj/
+OwnerPets.Services/bin/
+OwnerPets.Services/obj/
+OwnerPets.ServicesHelper/bin/
+OwnerPets.ServicesHelper/obj/
+.vs/

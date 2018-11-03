@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace NABAssignmentModels
+namespace OwnerPets.Data
 {
     /// <summary>
     /// This represents the model entity for person.
@@ -9,7 +9,7 @@ namespace NABAssignmentModels
     public class Person
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Person"/> class.
+        /// Initializes a new instance of the Person class.
         /// </summary>
         public Person()
         {

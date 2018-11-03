@@ -1,12 +1,12 @@
-﻿using NABAssignmentModels;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using OwnerPets.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace NABAssignmentRepository
+namespace OwnerPets.Repository
 {
-    public class PersonRepository : IRepository
+    public class PetsRepository : IRepository
     {    
         /// <summary>
         /// This method reads the person information from Json file and returns a list of person

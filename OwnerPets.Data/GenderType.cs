@@ -1,4 +1,4 @@
-﻿namespace NABAssignmentModels
+﻿namespace OwnerPets.Data
 {
     /// <summary>
     /// This specifies the gender type.
