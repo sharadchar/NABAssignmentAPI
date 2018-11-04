@@ -27,6 +27,7 @@ namespace OwnerPets.Api
             services.AddScoped<IPetsService, PetsService>();
             services.AddScoped<IPetsRepository, PetsRepository>();
             services.AddScoped<IFileReader, JsonFileReader>();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,9 +37,9 @@ namespace OwnerPets.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
             app.UseMvc();
-            app.UseCors(builder => builder.WithOrigins("http://localhost:4200/"));
+            
             
         }
     }

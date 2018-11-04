@@ -12,7 +12,7 @@ export class PetDataServiceService {
 
   
 
-  constructor(private httpClient: HttpClient ) {
+  constructor(private http: HttpClient ) {
     const endpoint = 'http://localhost:64079/api/';
     const httpOptions = {
       headers: new HttpHeaders({
@@ -21,13 +21,8 @@ export class PetDataServiceService {
     };
    }  
   
-   private extractData(res: Response) {
-      let body = res;
-      return body || { };
-    }
-
-    getProducts(): Observable<any> {
-      return this.httpClient.get('http://localhost:64079/api/pets');
+   getPetsData() {
+      return this.http.get('http://localhost:64079/api/pet').subscribe(data=> console.log("we got"+ data));
     }
 
     
