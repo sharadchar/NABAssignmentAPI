@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/pet/male",
+      "launchUrl": "api/pet",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "NABAssignmentAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/pet/male",
+      "launchUrl": "api/pet",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

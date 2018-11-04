@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using OwnerPets.Data;
-using OwnerPets.Repository;
 using OwnerPets.Services;
-using OwnerPets.ServicesHelper;
-using System.Collections.Generic;
 
 namespace OwnerPets.Api.Controllers
 {
@@ -14,34 +9,26 @@ namespace OwnerPets.Api.Controllers
     public class PetController : ControllerBase
     {
         private IConfiguration _configuration;
-        private IOptions<FileSettings> _options;
+        private IPetsService _petService;
 
-        public PetController(IConfiguration Configuration, IOptions<FileSettings> options)
+        public PetController(IConfiguration Configuration, IPetsService petService)
         {
             _configuration = Configuration;
-            _options = options;
+            _petService = petService;
         }
 
         [HttpGet]
         public ActionResult<PetsClassified> Get()
         {
-            PetsService personBL = new PetsService(_options);
+            PetsClassified petsClassified = _petService.GetPetsClassified();
 
-            PetsClassified petsClassified = personBL.GetPetsClassified();
+            if (petsClassified == null)
+            {
+                return NotFound();
+            }
 
-            return petsClassified;
+            return Ok(petsClassified);
         }
-
-        [HttpGet("{gender}")]
-        public ActionResult<IEnumerable<string>> Get(string gender)
-        {
-            PetsService personBL = new PetsService(_options);
-
-            var petsClassified = personBL.GetPetsByGender(gender);
-
-            return petsClassified;
-        }
-
 
     }
 }

@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Api", "OwnerPets.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Data", "OwnerPets.Data\OwnerPets.Data.csproj", "{D3532E7C-5BD2-44A7-8A19-6DA3C563C53C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.ServicesHelper", "OwnerPets.ServicesHelper\OwnerPets.ServicesHelper.csproj", "{18A94849-892F-4C5E-9CEB-49892B30A27E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Services", "OwnerPets.Services\OwnerPets.Services.csproj", "{ABE129BF-6C5C-4039-939D-C1AEC968ABE0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Repository", "OwnerPets.Repository\OwnerPets.Repository.csproj", "{A269C58E-6692-48FA-817B-3ED8CAF7414A}"
@@ -27,10 +25,6 @@ Global
 		{D3532E7C-5BD2-44A7-8A19-6DA3C563C53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3532E7C-5BD2-44A7-8A19-6DA3C563C53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3532E7C-5BD2-44A7-8A19-6DA3C563C53C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18A94849-892F-4C5E-9CEB-49892B30A27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18A94849-892F-4C5E-9CEB-49892B30A27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18A94849-892F-4C5E-9CEB-49892B30A27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18A94849-892F-4C5E-9CEB-49892B30A27E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ABE129BF-6C5C-4039-939D-C1AEC968ABE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ABE129BF-6C5C-4039-939D-C1AEC968ABE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABE129BF-6C5C-4039-939D-C1AEC968ABE0}.Release|Any CPU.ActiveCfg = Release|Any CPU

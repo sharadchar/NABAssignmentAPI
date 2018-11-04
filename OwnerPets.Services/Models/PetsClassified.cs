@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OwnerPets.Data
+namespace OwnerPets.Services
 {
     public class PetsClassified
     {

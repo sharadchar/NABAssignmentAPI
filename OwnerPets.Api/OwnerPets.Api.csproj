@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\OwnerPets.Data\OwnerPets.Data.csproj" />
     <ProjectReference Include="..\OwnerPets.Repository\OwnerPets.Repository.csproj" />
-    <ProjectReference Include="..\OwnerPets.ServicesHelper\OwnerPets.ServicesHelper.csproj" />
     <ProjectReference Include="..\OwnerPets.Services\OwnerPets.Services.csproj" />
   </ItemGroup>
 

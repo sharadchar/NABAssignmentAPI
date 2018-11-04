@@ -1,31 +1,32 @@
 ﻿using Microsoft.Extensions.Options;
 using OwnerPets.Data;
 using OwnerPets.Repository;
-using OwnerPets.ServicesHelper;
-using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 
 namespace OwnerPets.Services
 {
-    public class PetsService
+    public class PetsService : IPetsService
     {
-        private IPetsDataReader _dataReader;
+        private IPetsRepository _repository;
+        private IOptions<FileSettings> _filesettings;
         private string filePath;
 
-        public PetsService(IOptions<FileSettings> filesettings )
+        public PetsService(IOptions<FileSettings> filesettings, IPetsRepository repository)
         {
-            IRepository repository = new PetsRepository();
-            IPetsDataReader dataReader = new JsonFileReader(repository);
-
-            _dataReader = dataReader;
-            filePath = new FileService(filesettings).GetFilePath();
+            _repository = repository;
+            _filesettings = filesettings;
         }
 
-        public List<Person> GetPetsData()
+        private List<Person> GetPetsData()
         {
-            return _dataReader.GetData(filePath);
+            filePath = new FileService(_filesettings).GetFilePath();
+            
+            var data = _repository.GetData(filePath);
+
+            if (data == null) return null;
+
+            return data;
         }
 
         public PetsClassified GetPetsClassified()
@@ -34,6 +35,7 @@ namespace OwnerPets.Services
 
             var data = GetPetsData();
 
+            if (data == null) return null;
 
             result.MalePets = data.Where(x => x.gender == GenderType.Male && x.pets != null).SelectMany(x => x.pets).Where(y => y.type == PetType.Cat).Select(y => y.name).OrderBy(x => x).ToList();
 
@@ -42,16 +44,6 @@ namespace OwnerPets.Services
             return result;
         }
 
-        public List<string> GetPetsByGender(string gender)
-        {
-
-            GenderType genderType = (GenderType)Enum.Parse(typeof(GenderType), gender, true);
-            
-            var data = GetPetsData();
-
-            var result = data.Where(x => x.gender == genderType && x.pets != null).SelectMany(x => x.pets).Where(y => y.type == PetType.Cat).Select(y => y.name).OrderBy(x=>x).ToList();
-
-            return result;
-        }
+      
     }
 }
