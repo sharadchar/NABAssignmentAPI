@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Services", "Owner
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Repository", "OwnerPets.Repository\OwnerPets.Repository.csproj", "{A269C58E-6692-48FA-817B-3ED8CAF7414A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwnerPets.Test", "OwnerPets.Test\OwnerPets.Test.csproj", "{7943083B-6FD5-4D49-BF8F-C4D50010A588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwnerPets.Common", "OwnerPets.Common\OwnerPets.Common.csproj", "{B268A749-3BFE-4B35-BC30-A13B5D30BB39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{A269C58E-6692-48FA-817B-3ED8CAF7414A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A269C58E-6692-48FA-817B-3ED8CAF7414A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A269C58E-6692-48FA-817B-3ED8CAF7414A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7943083B-6FD5-4D49-BF8F-C4D50010A588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7943083B-6FD5-4D49-BF8F-C4D50010A588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7943083B-6FD5-4D49-BF8F-C4D50010A588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7943083B-6FD5-4D49-BF8F-C4D50010A588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B268A749-3BFE-4B35-BC30-A13B5D30BB39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B268A749-3BFE-4B35-BC30-A13B5D30BB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B268A749-3BFE-4B35-BC30-A13B5D30BB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B268A749-3BFE-4B35-BC30-A13B5D30BB39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,12 +8,10 @@ namespace OwnerPets.Api.Controllers
     [ApiController]
     public class PetController : ControllerBase
     {
-        private IConfiguration _configuration;
         private IPetsService _petService;
 
-        public PetController(IConfiguration Configuration, IPetsService petService)
+        public PetController(IPetsService petService)
         {
-            _configuration = Configuration;
             _petService = petService;
         }
 

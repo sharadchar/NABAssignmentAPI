@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 using OwnerPets.Data;
 using OwnerPets.Repository;
 using OwnerPets.Services;
@@ -27,6 +28,7 @@ namespace OwnerPets.Api
             services.AddScoped<IPetsService, PetsService>();
             services.AddScoped<IPetsRepository, PetsRepository>();
             services.AddScoped<IFileReader, JsonFileReader>();
+            services.AddScoped<IFileService, FileService>();
             services.AddCors();
         }
 
@@ -37,6 +39,8 @@ namespace OwnerPets.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
             app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
             app.UseMvc();
             

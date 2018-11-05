@@ -22,7 +22,7 @@ export class PetDataServiceService {
    }  
   
    getPetsData() {
-      return this.http.get('http://localhost:64079/api/pet').subscribe(data=> console.log("we got"+ data));
+      return this.http.get('http://localhost:64079/api/pet').subscribe(data=> console.log("we got", data));
     }
 
     

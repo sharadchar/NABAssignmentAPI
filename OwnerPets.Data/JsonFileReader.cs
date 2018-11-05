@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +8,15 @@ namespace OwnerPets.Data
 {
     public class JsonFileReader : IFileReader
     {
+
+        private readonly ILoggerFactory _loggerFactory;
+        private readonly ILogger _logger;
+
+        public JsonFileReader(ILoggerFactory loggerFactory)
+        {
+            _loggerFactory = loggerFactory;
+            _logger = _loggerFactory.CreateLogger("Logger");
+        }
         /// <summary>
         /// This method reads the person information from Json file and returns a list of person
         /// </summary>
@@ -24,7 +34,7 @@ namespace OwnerPets.Data
             }
             catch (Exception ex)
             {
-                //Log error here
+                _logger.Log(LogLevel.Critical, ex, "Error happened while reading Json file", null);
             }
             return null;
         }

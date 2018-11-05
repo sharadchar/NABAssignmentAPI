@@ -19,3 +19,7 @@ OwnerPets.Services/obj/
 OwnerPets.ServicesHelper/bin/
 OwnerPets.ServicesHelper/obj/
 .vs/
+OwnerPets.Common/bin/
+OwnerPets.Common/obj/
+OwnerPets.Test/bin/
+OwnerPets.Test/obj/

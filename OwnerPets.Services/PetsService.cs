@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using OwnerPets.Common;
 using OwnerPets.Data;
 using OwnerPets.Repository;
 using System.Collections.Generic;
@@ -9,18 +10,19 @@ namespace OwnerPets.Services
     public class PetsService : IPetsService
     {
         private IPetsRepository _repository;
-        private IOptions<FileSettings> _filesettings;
+        //private IOptions<FileSettings> _filesettings;
+        private IFileService _fileservice;
         private string filePath;
 
-        public PetsService(IOptions<FileSettings> filesettings, IPetsRepository repository)
+        public PetsService(IFileService fileservice, IPetsRepository repository)
         {
             _repository = repository;
-            _filesettings = filesettings;
+            _fileservice = fileservice;
         }
 
         private List<Person> GetPetsData()
         {
-            filePath = new FileService(_filesettings).GetFilePath();
+            filePath = _fileservice.GetFilePath();
             
             var data = _repository.GetData(filePath);
 
@@ -37,10 +39,18 @@ namespace OwnerPets.Services
 
             if (data == null) return null;
 
-            result.MalePets = data.Where(x => x.gender == GenderType.Male && x.pets != null).SelectMany(x => x.pets).Where(y => y.type == PetType.Cat).Select(y => y.name).OrderBy(x => x).ToList();
+            var malePets = data.Where(x => x.gender == GenderType.Male && x.pets != null).SelectMany(x => x.pets).Where(y => y.type == PetType.Cat).Select(y => y.name).OrderBy(x => x).ToList();
+            if (!malePets.IsNullOrEmpty())
+            {
+                result.MalePets = malePets;
+            }
 
-            result.FemalePets = data.Where(x => x.gender == GenderType.Female && x.pets != null).SelectMany(x => x.pets).Where(y => y.type == PetType.Cat).Select(y => y.name).OrderBy(x => x).ToList();
+            var femalePets = data.Where(x => x.gender == GenderType.Female && x.pets != null).SelectMany(x => x.pets).Where(y => y.type == PetType.Cat).Select(y => y.name).OrderBy(x => x).ToList();
 
+            if (!femalePets.IsNullOrEmpty())
+            {
+                result.FemalePets = femalePets;
+            }
             return result;
         }
 
