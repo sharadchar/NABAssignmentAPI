@@ -77,6 +77,10 @@
       {
         "name": "Nemo",
         "type": "Fish"
+      },
+      {
+        "name": "Keeti",
+        "type": "Cat"
       }
     ]
   }
